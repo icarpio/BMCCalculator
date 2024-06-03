@@ -1,1 +1,1 @@
-# BMCCalculator
+# BMICalculator
