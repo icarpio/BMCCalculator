@@ -1,31 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
-    tools:context=".MainActivity"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    tools:context=".MainActivity">
 
 
     <!-- Comentarios -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
         android:gravity="center_vertical"
+        android:orientation="horizontal"
         android:padding="8dp">
 
-    <TextView
-        android:id="@+id/welcomeTextView"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center"
-        android:textSize="30dp"
-        android:layout_gravity="center_horizontal"
-        android:text="@string/main_activity_click_text" />
+        <TextView
+            android:id="@+id/welcomeTextView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center"
+            android:text="@string/main_activity_click_text"
+            android:textSize="30dp" />
 
     </LinearLayout>
 
@@ -49,10 +48,11 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
         android:gravity="center_vertical"
+        android:orientation="horizontal"
         android:padding="8dp">
 
+        <!--
         <EditText
             android:id="@+id/heightEditText"
             android:layout_width="0dp"
@@ -60,13 +60,22 @@
             android:layout_weight="1"
             android:ems="10"
             android:inputType="number"
-            android:text="0" />
+            android:text="0" /> -->
+        <!-- Continuous slider -->
+        <com.google.android.material.slider.Slider
+            android:id="@+id/heightSlider"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:tickVisible="false"
+            android:valueFrom="100"
+            android:valueTo="240"
+            android:stepSize="1"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="cm"
-            android:textSize="24sp"/>
+            android:textSize="24sp" />
 
 
     </LinearLayout>
@@ -75,15 +84,15 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
         android:gravity="center_vertical"
+        android:orientation="horizontal"
         android:padding="8dp">
 
         <Button
             android:id="@+id/minusButton"
+            style="?attr/materialIconButtonFilledStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            style="?attr/materialIconButtonFilledStyle"
             app:icon="@drawable/minus">
 
         </Button>
@@ -92,16 +101,16 @@
             android:id="@+id/weightEditText"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:text="0 Kg"
-            android:textSize="24sp"
             android:textAlignment="center"
-            android:layout_weight="1"/>
+            android:textSize="24sp" />
 
         <Button
             android:id="@+id/addButton"
+            style="?attr/materialIconButtonFilledStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            style="?attr/materialIconButtonFilledStyle"
             app:icon="@drawable/plus">
 
         </Button>
@@ -109,14 +118,12 @@
     </LinearLayout>
 
 
-
-
     <Button
         android:id="@+id/calculateButton"
-        android:text="Calcular"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal">
+        android:layout_gravity="center_horizontal"
+        android:text="Calcular">
 
     </Button>
 
@@ -124,17 +131,17 @@
         android:id="@+id/resultTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        tools:text="Resultado: "
+        android:layout_gravity="center_horizontal"
         android:textSize="24sp"
-        android:layout_gravity="center_horizontal"/>
+        tools:text="Resultado: " />
 
     <TextView
         android:id="@+id/healthyTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        tools:text=""
-        android:textSize="24sp"
         android:layout_gravity="center_horizontal"
+        android:textSize="24sp"
+        tools:text=""
 
         />
 
@@ -142,8 +149,7 @@
         android:id="@+id/imageView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:srcCompat="@drawable/danger"
-        />
+        app:srcCompat="@drawable/danger" />
 
 
 </LinearLayout>
