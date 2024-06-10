@@ -10,6 +10,7 @@
 
 
     <!-- Comentarios -->
+    <!-- Comentarios
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -23,10 +24,10 @@
             android:layout_height="match_parent"
             android:layout_gravity="center_horizontal"
             android:gravity="center"
-            android:text="@string/main_activity_click_text"
+            android:text="BMI calculator"
             android:textSize="30dp" />
 
-    </LinearLayout>
+    </LinearLayout> -->
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -36,9 +37,9 @@
 
         <ImageView
             android:id="@+id/welcomeImageView"
-            android:layout_width="wrap_content"
-            android:layout_height="305dp"
-            android:layout_gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_gravity="center_vertical"
             app:srcCompat="@drawable/image" />
 
     </LinearLayout>
@@ -52,34 +53,37 @@
         android:orientation="horizontal"
         android:padding="8dp">
 
-        <!--
-        <EditText
+        <TextView
             android:id="@+id/heightEditText"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:ems="10"
-            android:inputType="number"
-            android:text="0" /> -->
-        <!-- Continuous slider -->
-        <com.google.android.material.slider.Slider
-            android:id="@+id/heightSlider"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:tickVisible="false"
-            android:valueFrom="100"
-            android:valueTo="240"
-            android:stepSize="1"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="cm"
+            android:text="0"
+            android:textAlignment="center"
             android:textSize="24sp" />
 
 
     </LinearLayout>
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="8dp">
+
+        <com.google.android.material.slider.Slider
+            android:id="@+id/heightSlider"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:labelBehavior="gone"
+            app:tickVisible="false"
+            android:valueFrom="100"
+            android:valueTo="240"
+            android:stepSize="1"/>
+
+
+    </LinearLayout>
     <!--Peso-->
     <LinearLayout
         android:layout_width="match_parent"
@@ -93,7 +97,7 @@
             style="?attr/materialIconButtonFilledStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:icon="@drawable/minus">
+            app:icon="@drawable/rewind">
 
         </Button>
 
@@ -111,7 +115,7 @@
             style="?attr/materialIconButtonFilledStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:icon="@drawable/plus">
+            app:icon="@drawable/forward">
 
         </Button>
 
@@ -150,6 +154,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:srcCompat="@drawable/danger" />
+
+
 
 
 </LinearLayout>
